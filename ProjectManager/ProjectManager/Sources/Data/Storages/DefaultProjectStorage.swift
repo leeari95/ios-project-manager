@@ -2,7 +2,11 @@ import Foundation
 import RxSwift
 
 final class DefaultProjectStorage {
-    private(set) var projects: [Project]
+    private(set) var projects: [Project] {
+        didSet {
+            projectStore.onNext(projects)
+        }
+    }
     private let projectStore: BehaviorSubject<[Project]>
     
     init(
@@ -17,7 +21,6 @@ final class DefaultProjectStorage {
 extension DefaultProjectStorage: ProjectStorage {
     func create(_ item: Project) -> Single<Project> {
         projects.append(item)
-        projectStore.onNext(projects)
         return Single.just(item)
     }
     
@@ -30,7 +33,6 @@ extension DefaultProjectStorage: ProjectStorage {
             }
         }
         projects[index] = item
-        projectStore.onNext(projects)
         return Single.create { observer in
             observer(.success(self.projects[index]))
             return Disposables.create()
@@ -46,7 +48,6 @@ extension DefaultProjectStorage: ProjectStorage {
             }
         }
         let deletedProject = projects.remove(at: index)
-        projectStore.onNext(projects)
         return Single.create { observer in
             observer(.success(deletedProject))
             
