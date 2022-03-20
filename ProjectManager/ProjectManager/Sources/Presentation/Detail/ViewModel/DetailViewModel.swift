@@ -11,7 +11,7 @@ final class DetailViewModel {
     
     private var mode: ViewMode
     private var project: Project
-    private let coordinator: DetailCoordinator
+    private weak var coordinator: DetailCoordinator?
     private let useCase: ProjectListUseCase
     
     init(useCase: ProjectListUseCase, coordinator: DetailCoordinator, project: Project, mode: ViewMode) {
@@ -22,7 +22,7 @@ final class DetailViewModel {
     }
     
     func dismiss() {
-        coordinator.dismiss()
+        coordinator?.dismiss()
     }
     
     struct Input {
@@ -80,7 +80,7 @@ final class DetailViewModel {
                         onFailure: { print($0.localizedDescription) }
                     ).disposed(by: disposeBag)
                 }
-                owner.coordinator.dismiss()
+                owner.coordinator?.dismiss()
             }).disposed(by: disposeBag)
         
         input.didTapLeftBarButton
@@ -90,7 +90,7 @@ final class DetailViewModel {
                     owner.mode = .edit
                     isEditable.accept(true)
                 case .add:
-                    owner.coordinator.dismiss()
+                    owner.coordinator?.dismiss()
                 case .edit:
                     owner.mode = .read
                     isEditable.accept(false)

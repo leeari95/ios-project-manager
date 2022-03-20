@@ -28,7 +28,6 @@ class DetailViewController: UIViewController, StoryboardCreatable {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewModel?.dismiss()
-        viewModel = nil
     }
     
     private func configure() {
