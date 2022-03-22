@@ -26,11 +26,11 @@ extension DefaultProjectListUseCase: ProjectListUseCase {
     }
     
     func fetch() -> BehaviorSubject<[Project]> {
-        return repository.fetch()
+        repository.fetch()
     }
     
     func fetch(id: UUID) -> Single<Project> {
-        return repository.fetch(id: id)
+        repository.fetch(id: id)
     }
     
     func changedState(_ project: Project, state: ProjectState) {
@@ -40,6 +40,6 @@ extension DefaultProjectListUseCase: ProjectListUseCase {
     }
     
     func isNotValidate(_ text: String?) -> Bool {
-        return text?.count ?? .zero > 1000 || text == "" || text == Placeholder.body
+        text?.count ?? .zero > 1000 || text == "" || text == Placeholder.body
     }
 }
