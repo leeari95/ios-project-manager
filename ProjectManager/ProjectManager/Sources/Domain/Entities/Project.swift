@@ -1,14 +1,18 @@
 import Foundation
 
-struct Project: Equatable {
+struct Project: Hashable {
     let id: UUID
     var title: String
     var description: String
     var date: Date
     var status: ProjectState
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+    }
+    
     static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.hashValue == rhs.hashValue
     }
 }
 
