@@ -4,9 +4,9 @@ class ProjectCell: UITableViewCell {
     static let nibName = "ProjectCell"
     static let identifier = "projectCell"
     
-    @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var descriptionLabel: UILabel!
-    @IBOutlet private var dateLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
     
     func configure(_ project: Project) {
         titleLabel.text = project.title == "" ? "New Project" : project.title
