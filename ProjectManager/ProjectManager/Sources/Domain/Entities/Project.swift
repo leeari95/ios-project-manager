@@ -1,11 +1,15 @@
 import Foundation
 
-struct Project {
+struct Project: Equatable {
     let id: UUID
     var title: String
     var description: String
     var date: Date
     var status: ProjectState
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 extension Project {

@@ -26,7 +26,7 @@ extension DefaultProjectStorage: ProjectStorage {
     
     func update(_ item: Project?) -> Single<Project> {
         guard let item = item,
-              let index = projects.firstIndex(where: { $0.id == item.id }) else {
+              let index = projects.firstIndex(where: { $0 == item }) else {
             return Single.create { observer in
                 observer(.failure(StorageError.notFound))
                 return Disposables.create()
@@ -41,7 +41,7 @@ extension DefaultProjectStorage: ProjectStorage {
     
     func delete(_ item: Project?) -> Single<Project> {
         guard let item = item,
-              let index = projects.firstIndex(where: { $0.id == item.id }) else {
+              let index = projects.firstIndex(where: { $0 == item }) else {
             return Single.create { observer in
                 observer(.failure(StorageError.notFound))
                 return Disposables.create()
