@@ -43,6 +43,7 @@
 		9A40A72C27DBAA0100C33A24 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40A72B27DBAA0100C33A24 /* MainCoordinator.swift */; };
 		9A4E678627DEFDFC00116092 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E678527DEFDFC00116092 /* DetailCoordinator.swift */; };
 		9A4E67BB27E06EE400116092 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E67BA27E06EE400116092 /* Coordinator.swift */; };
+		9A5E149A28040389007946D4 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E149928040389007946D4 /* CoreDataStorage.swift */; };
 		9A5E149D280408E3007946D4 /* ProjectEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E149B280408E3007946D4 /* ProjectEntity.xcdatamodeld */; };
 		9A5E14A028040D5F007946D4 /* ProjectEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E149E28040D5F007946D4 /* ProjectEntity+CoreDataClass.swift */; };
 		9A5E14A128040D5F007946D4 /* ProjectEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E149F28040D5F007946D4 /* ProjectEntity+CoreDataProperties.swift */; };
@@ -101,6 +102,7 @@
 		9A40A72B27DBAA0100C33A24 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		9A4E678527DEFDFC00116092 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		9A4E67BA27E06EE400116092 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9A5E149928040389007946D4 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		9A5E149C280408E3007946D4 /* ProjectEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectEntity.xcdatamodel; sourceTree = "<group>"; };
 		9A5E149E28040D5F007946D4 /* ProjectEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A5E149F28040D5F007946D4 /* ProjectEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				9A40A0D427D0CC5200A73BBA /* ProjectStorage.swift */,
 				9A40A0D627D0CCF600A73BBA /* DefaultProjectStorage.swift */,
+				9A5E149928040389007946D4 /* CoreDataStorage.swift */,
 				9A5E149B280408E3007946D4 /* ProjectEntity.xcdatamodeld */,
 				9A5E149E28040D5F007946D4 /* ProjectEntity+CoreDataClass.swift */,
 				9A5E149F28040D5F007946D4 /* ProjectEntity+CoreDataProperties.swift */,
@@ -562,6 +565,7 @@
 				9A40A0A127CF9BB600A73BBA /* Date+extension.swift in Sources */,
 				9A40A09D27CF8C6700A73BBA /* ProjectListViewModel.swift in Sources */,
 				9A40A0D527D0CC5200A73BBA /* ProjectStorage.swift in Sources */,
+				9A5E149A28040389007946D4 /* CoreDataStorage.swift in Sources */,
 				9A40A07D27CF491900A73BBA /* Project.swift in Sources */,
 				9A40A0A427CFA13800A73BBA /* ProjectRepository.swift in Sources */,
 				9A786B3E27E47C55002161E7 /* UIStoryboard+extension.swift in Sources */,
