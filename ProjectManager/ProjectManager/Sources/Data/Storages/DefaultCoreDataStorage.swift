@@ -1,8 +1,8 @@
 import Foundation
 import CoreData
 
-final class CoreDataStorage {
-    static let shared = CoreDataStorage()
+final class DefaultCoreDataStorage {
+    static let shared = DefaultCoreDataStorage()
     private init() {}
     
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
@@ -47,7 +47,7 @@ final class CoreDataStorage {
 }
 
 // MARK: - CRUD
-extension CoreDataStorage {
+extension DefaultCoreDataStorage {
     func insert(entityName: String = "ProjectEntity", items: [String: Any]) {
         let context = persistentContainer.viewContext
         let managedObject = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
