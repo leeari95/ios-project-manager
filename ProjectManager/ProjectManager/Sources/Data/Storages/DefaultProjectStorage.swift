@@ -10,8 +10,8 @@ final class DefaultProjectStorage {
     private let projectStore: BehaviorSubject<[Project]>
     
     init(
-        projects: [Project] = [],
-        projectStore: BehaviorSubject<[Project]> = BehaviorSubject<[Project]>(value: [])
+        projects: [Project] = CoreDataStorage.shared.setup(),
+        projectStore: BehaviorSubject<[Project]> = BehaviorSubject<[Project]>(value: CoreDataStorage.shared.setup())
     ) {
         self.projects = projects
         self.projectStore = projectStore
@@ -20,6 +20,14 @@ final class DefaultProjectStorage {
 
 extension DefaultProjectStorage: ProjectStorage {
     func create(_ item: Project) -> Single<Project> {
+        let items: [String: Any] = [
+            "id": item.id,
+            "title": item.title,
+            "body": item.description,
+            "date": item.date,
+            "status": item.status.rawValue
+        ]
+        CoreDataStorage.shared.insert(items: items)
         projects.append(item)
         return Single.just(item)
     }
@@ -32,25 +40,36 @@ extension DefaultProjectStorage: ProjectStorage {
                 return Disposables.create()
             }
         }
+        let items: [String: Any] = [
+            "id": item.id,
+            "title": item.title,
+            "body": item.description,
+            "date": item.date,
+            "status": item.status.rawValue
+        ]
+        CoreDataStorage.shared.updateProject(items: items)
         projects[index] = item
         return Single.create { observer in
-            observer(.success(self.projects[index]))
+            observer(.success(item))
             return Disposables.create()
         }
     }
     
     func delete(_ item: Project?) -> Single<Project> {
         guard let item = item,
-              let index = projects.firstIndex(where: { $0 == item }) else {
+              let index = projects.firstIndex(where: { $0 == item }),
+              let project = CoreDataStorage.shared.fetch(
+                predicate: NSPredicate(format: "id == %@", item.id as CVarArg)
+              )?.first else {
             return Single.create { observer in
                 observer(.failure(StorageError.notFound))
                 return Disposables.create()
             }
         }
-        let deletedProject = projects.remove(at: index)
+        CoreDataStorage.shared.delete(project)
+        projects.remove(at: index)
         return Single.create { observer in
-            observer(.success(deletedProject))
-            
+            observer(.success(item))
             return Disposables.create()
         }
     }
