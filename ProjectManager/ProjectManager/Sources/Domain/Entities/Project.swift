@@ -7,6 +7,19 @@ struct Project: Hashable {
     var date: Date
     var status: ProjectState
     
+    /**
+     Project의 프로퍼티들을 Dictionary 형태로 반환합니다.
+     */
+    var dictionary: [String: Any] {
+        return [
+            "id": self.id,
+            "title": self.title,
+            "body": self.description,
+            "date": self.date,
+            "status": self.status.rawValue,
+        ]
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.id)
     }
