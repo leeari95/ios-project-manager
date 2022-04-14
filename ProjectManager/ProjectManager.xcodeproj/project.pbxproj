@@ -46,6 +46,7 @@
 		9A5E14A22805657E007946D4 /* DefaultCoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E149928040389007946D4 /* DefaultCoreDataStorage.swift */; };
 		9A5E14A32805659C007946D4 /* ProjectEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E149E28040D5F007946D4 /* ProjectEntity+CoreDataClass.swift */; };
 		9A5E14A42805659F007946D4 /* ProjectEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E149F28040D5F007946D4 /* ProjectEntity+CoreDataProperties.swift */; };
+		9A5E14A828056C2B007946D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A5E14A728056C2B007946D4 /* GoogleService-Info.plist */; };
 		9A786B3E27E47C55002161E7 /* UIStoryboard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A786B3D27E47C55002161E7 /* UIStoryboard+extension.swift */; };
 		9A786B4327E4EADE002161E7 /* UIStoryboard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A786B3D27E47C55002161E7 /* UIStoryboard+extension.swift */; };
 		9AFCA04627E1745B00CFADFD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40A72227DB6ACB00C33A24 /* DetailViewController.swift */; };
@@ -103,6 +104,7 @@
 		9A5E149C280408E3007946D4 /* ProjectEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectEntity.xcdatamodel; sourceTree = "<group>"; };
 		9A5E149E28040D5F007946D4 /* ProjectEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A5E149F28040D5F007946D4 /* ProjectEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9A5E14A728056C2B007946D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A786B3D27E47C55002161E7 /* UIStoryboard+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+extension.swift"; sourceTree = "<group>"; };
 		C7431F0225F51E1D0094C4CF /* ProjectManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7431F0525F51E1D0094C4CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 		C7431F0425F51E1D0094C4CF /* ProjectManager */ = {
 			isa = PBXGroup;
 			children = (
+				9A5E14A728056C2B007946D4 /* GoogleService-Info.plist */,
 				C7431F1325F51E1E0094C4CF /* Info.plist */,
 				9A40A09627CF88B500A73BBA /* Sources */,
 				9A40A09427CF889D00A73BBA /* Resource */,
@@ -480,6 +483,7 @@
 				C7431F0D25F51E1D0094C4CF /* Main.storyboard in Resources */,
 				9A40A71527D9DFF700C33A24 /* ProjectCell.xib in Resources */,
 				9A40A72827DB6B1D00C33A24 /* Detail.storyboard in Resources */,
+				9A5E14A828056C2B007946D4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
